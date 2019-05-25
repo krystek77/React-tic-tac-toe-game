@@ -1,33 +1,117 @@
 .App {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  padding:2rem 2rem 0rem;
+  border:1px dotted #fbfcfc; 
+}
+.dashboard {
+  width:30rem;
+  padding:2rem;
   text-align: center;
 }
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.dashboard h2 {
+  text-transform: uppercase;
+  padding-bottom:1rem;
+  font-size: 1.5rem;
+  
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.dashboard p {
+  font-size: 2rem;
+}
+.game-board h1 {
+  text-transform: uppercase;
+  padding-bottom:1.5rem;
+  text-align: center;
+  font-size: 2rem;
+}
+.board {
+  width:45rem;
+  height:45rem;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  box-shadow: 0px 0px 4px 2px rgba(0,0,0,0.3);
+  padding:2rem; 
+  
+}
+.result-board {
+  width:100%;
+  height: 100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content: center;
+  background-color: #333333;
+}
+.result-board .game-over,.result-board .the-winner {
+  font-size: 4rem;
+  font-weight: 700;
+  font-family: 'Days One',sans-serif;
+  color:#fbfcfc;
+  margin-bottom:1rem;
+}
+.result-board .game-pad{
+  font-size: 3.2rem;
+  margin-bottom:2rem;
+}
+.result-board .the-winner {
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-weight: 300;
 }
 
-.App-link {
-  color: #61dafb;
+.square {
+  width:15rem;
+  height:15rem;
+  outline:1px solid #333333;
+  flex-shrink: 0;
+  background-color: #fcc01c;
+  cursor:pointer;
+  color:#fbfcfc;
+  text-align: center;
+  font-size: 6rem;
+  line-height: 15rem;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.square:hover{
+  background-color: red;
+}
+.active-player-wrapper {
+  box-shadow: 0px 0px 4px 2px rgba(0,0,0,0.3);
+  padding: 1rem;
+  width:max-content;
+  margin:1rem auto;
+}
+.square.active-player {
+  cursor:initial;
+  background-color: red
+}
+.square.active-player:hover{
+  background-color: red
+}
+.reset-game,.try-again {
+  background-color:#9dd6f9;
+  border:1px solid #5eb6ef;
+  outline:none;
+  cursor:pointer;
+  padding:1rem 1.5rem;
+  color:#333333;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+.try-again {
+  width:max-content;
+}
+.reset-game:hover,.try-again:hover{
+  background-color:#5eb6ef;
+  border:1px solid #9dd6f9;
+  color: #333333;
+}
+.tips {
+  min-height: 5rem;
+  padding:1rem;
+  text-align: center;
+  font-size: 2rem;
+  line-height: 5rem;
 }
